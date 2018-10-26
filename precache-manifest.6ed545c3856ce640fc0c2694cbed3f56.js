@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/rainbow-code/static/css/main.7fe412fd.chunk.css"
   },
   {
-    "revision": "ccbddc0ae847da8c7a98d14328c3fdc3",
+    "revision": "fe42efe9a7a146cf6c9656b3b14321a0",
     "url": "/rainbow-code/index.html"
   }
 ];
