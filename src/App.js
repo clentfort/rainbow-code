@@ -1,25 +1,35 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
+import jsbarcode from 'jsbarcode';
+
+class Barcode extends Component {
+  canvas = React.createRef();
+
+  componentDidMount() {
+    const {current} = this.canvas;
+    if (current) {
+      jsbarcode(current, this.props.code, {
+        format: 'CODE39',
+      });
+    }
+  }
+
+  render() {
+    return <canvas ref={this.canvas} />;
+  }
+}
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div
+        style={{
+          alignItems: 'center',
+          display: 'flex',
+          justifyContent: 'center',
+          minHeight: "100vh",
+          minWidth: "100vw",
+        }}>
+        <Barcode code="05606" />
       </div>
     );
   }
