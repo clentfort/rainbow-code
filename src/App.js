@@ -4,6 +4,7 @@ import Barcode from './Barcode';
 class App extends Component {
   state = {
     code: null,
+    input: null,
   };
 
   componentDidMount() {
@@ -15,15 +16,25 @@ class App extends Component {
     );
   }
 
-  renderHelp() {
-    const {origin, pathname} = window.location;
+  renderInput() {
     return (
-      <p>
-        To render a barcode change the hash of the page. I.e to render a barcode
-        for the value <span style={{fontFamiliy: 'monospace'}}>TEST</span>{' '}
-        navigate to {origin + pathname}
-        #TEST
-      </p>
+      <form
+        onSubmit={e => {
+          e.preventDefault();
+          window.location.href = '#' + this.state.input;
+        }}>
+        <input
+          value={this.state.input}
+          type="number"
+          placeholder="Code"
+          onChange={e => this.setState({input: e.target.value})}
+        />
+        <button type="submit">Set Code</button>
+        <p>
+          The number below the barcode on the small plastic card you get when
+          you first register with Rainbow Rocket.
+        </p>
+      </form>
     );
   }
 
@@ -43,7 +54,7 @@ class App extends Component {
           minHeight: '100vh',
           minWidth: '100vw',
         }}>
-        {code ? this.renderBarcode() : this.renderHelp()}
+        {code ? this.renderBarcode() : this.renderInput()}
       </div>
     );
   }
