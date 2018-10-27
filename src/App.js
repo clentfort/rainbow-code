@@ -3,17 +3,13 @@ import Barcode from './Barcode';
 
 class App extends Component {
   state = {
-    code: null,
-    input: null,
+    code: window.localStorage.getItem('code'),
+    input: '',
   };
 
-  componentDidMount() {
-    this.setState({code: window.location.hash.substring(1)});
-    window.addEventListener('hashchange', () =>
-      this.setState({
-        code: window.location.hash.substring(1),
-      }),
-    );
+  updateCode(code) {
+    window.localStorage.setItem('code', code);
+    this.setState({code});
   }
 
   renderInput() {
@@ -21,7 +17,7 @@ class App extends Component {
       <form
         onSubmit={e => {
           e.preventDefault();
-          window.location.href = '#' + this.state.input;
+          this.updateCode(this.state.input);
         }}>
         <input
           value={this.state.input}
@@ -40,7 +36,16 @@ class App extends Component {
 
   renderBarcode() {
     const {code} = this.state;
-    return <Barcode code={code} />;
+    return (
+      <>
+        <div>
+          <Barcode code={code} />
+        </div>
+        <button type="button" onClick={() => this.updateCode(null)}>
+          Clear code
+        </button>
+      </>
+    );
   }
 
   render() {
@@ -50,6 +55,7 @@ class App extends Component {
         style={{
           alignItems: 'center',
           display: 'flex',
+          flexDirection: 'column',
           justifyContent: 'center',
           minHeight: '100vh',
           minWidth: '100vw',
