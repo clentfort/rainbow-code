@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.2/workbox-sw.js");
 
 importScripts(
-  "/rainbow-code/precache-manifest.6ed545c3856ce640fc0c2694cbed3f56.js"
+  "/rainbow-code/precache-manifest.e4c823c7e0e3be3cb56e23f98db61122.js"
 );
 
 workbox.clientsClaim();
