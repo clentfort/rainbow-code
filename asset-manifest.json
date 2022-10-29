@@ -1,13 +1,13 @@
 {
-  "main.css": "/rainbow-code/static/css/main.9b13cede.chunk.css",
-  "main.js": "/rainbow-code/static/js/main.348c93b5.chunk.js",
-  "main.js.map": "/rainbow-code/static/js/main.348c93b5.chunk.js.map",
-  "static/js/1.2e17bfd2.chunk.js": "/rainbow-code/static/js/1.2e17bfd2.chunk.js",
-  "static/js/1.2e17bfd2.chunk.js.map": "/rainbow-code/static/js/1.2e17bfd2.chunk.js.map",
-  "runtime~main.js": "/rainbow-code/static/js/runtime~main.d5e21098.js",
-  "runtime~main.js.map": "/rainbow-code/static/js/runtime~main.d5e21098.js.map",
-  "static/css/main.9b13cede.chunk.css.map": "/rainbow-code/static/css/main.9b13cede.chunk.css.map",
-  "index.html": "/rainbow-code/index.html",
-  "precache-manifest.5dbbe398ceb0286b8523ca27ffb8764e.js": "/rainbow-code/precache-manifest.5dbbe398ceb0286b8523ca27ffb8764e.js",
-  "service-worker.js": "/rainbow-code/service-worker.js"
+  "files": {
+    "main.css": "/rainbow-code/static/css/main.4152c3d3.css",
+    "main.js": "/rainbow-code/static/js/main.e3c46266.js",
+    "index.html": "/rainbow-code/index.html",
+    "main.4152c3d3.css.map": "/rainbow-code/static/css/main.4152c3d3.css.map",
+    "main.e3c46266.js.map": "/rainbow-code/static/js/main.e3c46266.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4152c3d3.css",
+    "static/js/main.e3c46266.js"
+  ]
 }
