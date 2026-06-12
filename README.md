@@ -34,7 +34,7 @@ pnpm dev
 
 ```sh
 pnpm build
-pnpm deploy
+pnpm publish:gh
 ```
 
 Deploys the `dist/` folder to the `gh-pages` branch.

@@ -13,7 +13,7 @@
     "build": "vite build",
     "typecheck": "tsc -b",
     "preview": "vite preview",
-    "deploy": "gh-pages -d dist -b gh-pages"
+    "publish:gh": "gh-pages -d dist -b gh-pages"
   },
   "dependencies": {
     "@tanstack/react-router": "^1.95.0",
