@@ -1,0 +1,11 @@
+node_modules
+dist
+*.local
+.DS_Store
+.vite
+src/routeTree.gen.ts
+*.tsbuildinfo
+.yarn/install-state.gz
+.yarn/cache
+.yarn/build-state.yml
+

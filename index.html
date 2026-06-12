@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#222222" />
+    <title>Rainbow Code</title>
+    <script>
+      // Restore SPA path stashed by 404.html
+      (function () {
+        var l = window.location;
+        if (l.search.indexOf('p=') !== -1) {
+          var q = new URLSearchParams(l.search);
+          var p = q.get('p');
+          var extra = q.get('q');
+          if (p !== null) {
+            var newSearch = extra ? '?' + extra.replace(/~and~/g, '&') : '';
+            history.replaceState(
+              null, '',
+              l.pathname.replace(/\/$/, '') + p.replace(/~and~/g, '&') + newSearch + l.hash,
+            );
+          }
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+{
+  "name": "rainbow-code",
+  "private": true,
+  "version": "0.2.0",
+  "type": "module",
+  "homepage": "https://clentfort.github.io/rainbow-code",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "typecheck": "tsc -b",
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist -b gh-pages"
+  },
+  "dependencies": {
+    "@tanstack/react-router": "^1.95.0",
+    "idb-keyval": "^6.2.1",
+    "jsbarcode": "^3.11.6",
+    "qrcode": "^1.5.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@tanstack/router-plugin": "^1.95.0",
+    "@types/jsbarcode": "^3.11.4",
+    "@types/node": "^25.9.3",
+    "@types/qrcode": "^1.5.5",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "gh-pages": "^6.2.0",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.3"
+  }
+}
