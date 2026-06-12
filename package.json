@@ -4,6 +4,10 @@
   "version": "0.2.0",
   "type": "module",
   "homepage": "https://clentfort.github.io/rainbow-code",
+  "packageManager": "pnpm@10.12.2",
+  "engines": {
+    "node": ">=24"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",

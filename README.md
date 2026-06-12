@@ -23,16 +23,18 @@ screen, with a custom icon and color.
 
 ## Develop
 
+Requires Node 24 (see `.nvmrc`) and pnpm.
+
 ```sh
-yarn install
-yarn dev
+pnpm install
+pnpm dev
 ```
 
 ## Deploy
 
 ```sh
-yarn build
-yarn deploy
+pnpm build
+pnpm deploy
 ```
 
 Deploys the `dist/` folder to the `gh-pages` branch.
