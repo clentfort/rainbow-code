@@ -64,6 +64,7 @@ input, select { font: inherit; }
   border-radius: 16px; padding: 20px; text-align: center;
 }
 .card .code-area { background: #fff; border-radius: 12px; padding: 16px; display: inline-block; }
+.card img { display: block; margin: 0 auto 12px; }
 .card h2 { margin: 12px 0 0; }
 
 .tabs { display: flex; gap: 4px; margin-bottom: 12px; }
