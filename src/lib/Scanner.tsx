@@ -1,15 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
+import { BarcodeDetector } from 'barcode-detector/pure';
 import type { BarcodeFormat } from './storage';
-
-interface DetectedBarcode {
-  rawValue: string;
-  format: string;
-}
-
-interface BarcodeDetectorCtor {
-  new (opts?: { formats?: string[] }): { detect(src: CanvasImageSource): Promise<DetectedBarcode[]> };
-  getSupportedFormats?(): Promise<string[]>;
-}
 
 const SUPPORTED: BarcodeFormat[] = [
   'qr_code',
@@ -27,13 +18,7 @@ export function Scanner({ onDetected }: { onDetected: (code: string, format: Bar
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const Ctor = (window as unknown as { BarcodeDetector?: BarcodeDetectorCtor }).BarcodeDetector;
-    if (!Ctor) {
-      setError('BarcodeDetector not available — please enter the code manually.');
-      return;
-    }
-
-    const detector = new Ctor({ formats: SUPPORTED });
+    const detector = new BarcodeDetector({ formats: SUPPORTED });
     let stream: MediaStream | null = null;
     let raf = 0;
     let cancelled = false;
@@ -66,7 +51,14 @@ export function Scanner({ onDetected }: { onDetected: (code: string, format: Bar
         };
         raf = requestAnimationFrame(tick);
       } catch (err) {
-        setError(`Camera unavailable: ${(err as Error).message}`);
+        const msg = (err as Error).message || String(err);
+        if (!window.isSecureContext) {
+          setError(
+            'Camera requires HTTPS. Open this page over HTTPS (e.g. the GitHub Pages URL, or a cloudflared tunnel) and try again.',
+          );
+        } else {
+          setError(`Camera unavailable: ${msg}`);
+        }
       }
     })();
 

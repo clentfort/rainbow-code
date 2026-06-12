@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@tanstack/react-router": "^1.95.0",
+    "barcode-detector": "3.2.0",
     "idb-keyval": "^6.2.1",
     "jsbarcode": "^3.11.6",
     "qrcode": "^1.5.4",
