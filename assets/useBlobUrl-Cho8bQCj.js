@@ -1,0 +1,1 @@
+import{r as u}from"./index-Zz04amcj.js";function o(e){const[s,r]=u.useState();return u.useEffect(()=>{if(!e){r(void 0);return}const t=URL.createObjectURL(e);return r(t),()=>URL.revokeObjectURL(t)},[e]),s}export{o as u};

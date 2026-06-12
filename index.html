@@ -1,1 +1,32 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><link rel="shortcut icon" href="/rainbow-code/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="/rainbow-code/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/rainbow-code/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/rainbow-code/favicon-16x16.png"><link rel="manifest" href="/rainbow-code/manifest.json"><link rel="mask-icon" href="/rainbow-code/safari-pinned-tab.svg" color="#5bbad5"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name="theme-color" content="#000000"><title>Rainbow Code</title><script defer="defer" src="/rainbow-code/static/js/main.e3c46266.js"></script><link href="/rainbow-code/static/css/main.4152c3d3.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#222222" />
+    <title>Rainbow Code</title>
+    <script>
+      // Restore SPA path stashed by 404.html
+      (function () {
+        var l = window.location;
+        if (l.search.indexOf('p=') !== -1) {
+          var q = new URLSearchParams(l.search);
+          var p = q.get('p');
+          var extra = q.get('q');
+          if (p !== null) {
+            var newSearch = extra ? '?' + extra.replace(/~and~/g, '&') : '';
+            history.replaceState(
+              null, '',
+              l.pathname.replace(/\/$/, '') + p.replace(/~and~/g, '&') + newSearch + l.hash,
+            );
+          }
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="/rainbow-code/assets/index-Zz04amcj.js"></script>
+    <link rel="stylesheet" crossorigin href="/rainbow-code/assets/index-CMv8KpVE.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
